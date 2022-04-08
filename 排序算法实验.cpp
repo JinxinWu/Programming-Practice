@@ -12,36 +12,36 @@ typedef struct datas ElemType;
 ElemType A[N], Aux[N], B[N];
 int C[N], iCountA[N];
 
-//Ã°ÅİÅÅĞò
+//å†’æ³¡æ’åº
 void BubbleSort(ElemType A[], int n);
-//¼òµ¥Ñ¡ÔñÅÅĞò
+//ç®€å•é€‰æ‹©æ’åº
 void SelectSort(ElemType A[], int n);
-//Ö±½Ó²åÈëÅÅĞò
+//ç›´æ¥æ’å…¥æ’åº
 void InsertionSort(ElemType A[], int n);
-//¹é²¢ÅÅĞò
+//å½’å¹¶æ’åº
 void MergeSoft(ElemType A[], int low, int high, ElemType Aux[]);
 void Merge(ElemType A[], int low, int m, int high, ElemType Aux[]);
-//¿ìËÙÅÅĞò
+//å¿«é€Ÿæ’åº
 void QuickSort(ElemType A[], int low, int high);
 int QuickPass(ElemType A[], int low, int high);
-//¼ÆÊıÅÅĞò
+//è®¡æ•°æ’åº
 void CounterSort(ElemType A[], int n, int iCountA[], int maxKey, ElemType sortedA[]);
-//Í°ÅÅĞò
+//æ¡¶æ’åº
 void BucketSort(ElemType A[], int n);
 
-void Copy(ElemType A[], ElemType B[]);//¸´ÖÆÊı×éAµ½Êı×éB
-void CreateRandom(ElemType A[]);//²úÉúN¸öËæ»úÊı
-void PrintData(ElemType A[]);//´òÓ¡Êı¾İ
-void Check(ElemType A[]);//ÅÅĞò½á¹û¼ì²âº¯Êı
+void Copy(ElemType A[], ElemType B[]);//å¤åˆ¶æ•°ç»„Aåˆ°æ•°ç»„B
+void CreateRandom(ElemType A[]);//äº§ç”ŸNä¸ªéšæœºæ•°
+void PrintData(ElemType A[]);//æ‰“å°æ•°æ®
+void Check(ElemType A[]);//æ’åºç»“æœæ£€æµ‹å‡½æ•°
 
 int main()
 {
-    printf("   N=%dÊ±£º\n", N);
+    printf("   N=%dæ—¶ï¼š\n", N);
     int start1, finish1, start2, finish2;
     int low = 0, high = N - 1;
     CreateRandom(A);
-    Copy(A, B);//BÊı×éÓÃÀ´¼ÇÂ¼Ô­Êı×é
-    //Í°ÅÅĞò
+    Copy(A, B);//Bæ•°ç»„ç”¨æ¥è®°å½•åŸæ•°ç»„
+    //æ¡¶æ’åº
     start1 = clock();
     BucketSort(A, N);
     finish1 = clock();
@@ -50,23 +50,23 @@ int main()
     start2 = clock();
     BucketSort(A, N);
     finish2 = clock();
-    printf("   Í°ÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×éÍ°ÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
-    //¼ÆÊıÅÅĞò
-    Copy(B, A);//½«AÊı×éÖĞÊı¾İ¸´Ô­
+    printf("   æ¡¶æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„æ¡¶æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
+    //è®¡æ•°æ’åº
+    Copy(B, A);//å°†Aæ•°ç»„ä¸­æ•°æ®å¤åŸ
     int maxKey = N - 1;
     start1 = clock();
-    CounterSort(A, N, iCountA, maxKey, Aux);//½á¹ûÔÚAuxÖĞ
+    CounterSort(A, N, iCountA, maxKey, Aux);//ç»“æœåœ¨Auxä¸­
     finish1 = clock();
     //PrintData(Aux);
     Check(Aux);
     start2 = clock();
     CounterSort(A, N, iCountA, maxKey, Aux);
     finish2 = clock();
-    printf("   ¼ÆÊıÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×é¼ÆÊıÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
-    //¹é²¢ÅÅĞò
-    Copy(B, A);//½«AÊı×éÖĞÊı¾İ¸´Ô­
+    printf("   è®¡æ•°æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„è®¡æ•°æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
+    //å½’å¹¶æ’åº
+    Copy(B, A);//å°†Aæ•°ç»„ä¸­æ•°æ®å¤åŸ
     start1 = clock();
     MergeSoft(A, low, high, Aux);
     finish1 = clock();
@@ -75,10 +75,10 @@ int main()
     start2 = clock();
     MergeSoft(A, low, high, Aux);
     finish2 = clock();
-    printf("   ¹é²¢ÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×é¹é²¢ÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
-    //¿ìËÙÅÅĞò
-    Copy(B, A);//½«AÊı×éÖĞÊı¾İ¸´Ô­
+    printf("   å½’å¹¶æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„å½’å¹¶æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
+    //å¿«é€Ÿæ’åº
+    Copy(B, A);//å°†Aæ•°ç»„ä¸­æ•°æ®å¤åŸ
     start1 = clock();
     QuickSort(A, low, high);
     finish1 = clock();
@@ -87,10 +87,10 @@ int main()
     start2 = clock();
     QuickSort(A, low, high);
     finish2 = clock();
-    printf("   ¿ìËÙÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×é¿ìËÙÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
-    //Ö±½Ó²åÈëÅÅĞò
-    Copy(B, A);//½«AÊı×éÖĞÊı¾İ¸´Ô­
+    printf("   å¿«é€Ÿæ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„å¿«é€Ÿæ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
+    //ç›´æ¥æ’å…¥æ’åº
+    Copy(B, A);//å°†Aæ•°ç»„ä¸­æ•°æ®å¤åŸ
     start1 = clock();
     InsertionSort(A, N);
     finish1 = clock();
@@ -99,10 +99,10 @@ int main()
     start2 = clock();
     InsertionSort(A, N);
     finish2 = clock();
-    printf("   Ö±½Ó²åÈëÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×éÖ±½Ó²åÈëÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
-    //¼òµ¥Ñ¡ÔñÅÅĞò
-    Copy(B, A);//½«AÊı×éÖĞÊı¾İ¸´Ô­
+    printf("   ç›´æ¥æ’å…¥æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„ç›´æ¥æ’å…¥æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
+    //ç®€å•é€‰æ‹©æ’åº
+    Copy(B, A);//å°†Aæ•°ç»„ä¸­æ•°æ®å¤åŸ
     start1 = clock();
     SelectSort(A, N);
     finish1 = clock();
@@ -111,10 +111,10 @@ int main()
     start2 = clock();
     SelectSort(A, N);
     finish2 = clock();
-    printf("   ¼òµ¥Ñ¡ÔñÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×é¼òµ¥Ñ¡ÔñÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
-    //Ã°ÅİÅÅĞò
-    Copy(B, A);//½«AÊı×éÖĞÊı¾İ¸´Ô­
+    printf("   ç®€å•é€‰æ‹©æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„ç®€å•é€‰æ‹©æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
+    //å†’æ³¡æ’åº
+    Copy(B, A);//å°†Aæ•°ç»„ä¸­æ•°æ®å¤åŸ
     start1 = clock();
     BubbleSort(A, N);
     finish1 = clock();
@@ -123,13 +123,13 @@ int main()
     start2 = clock();
     BubbleSort(A, N);
     finish2 = clock();
-    printf("   Ã°ÅİÅÅĞòËù»¨Ê±¼ä£º%dms", finish1 - start1);
-    printf("   ÓĞĞòÊı×éÃ°ÅİÅÅĞòËù»¨Ê±¼ä£º%dms\n", finish2 - start2);
+    printf("   å†’æ³¡æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms", finish1 - start1);
+    printf("   æœ‰åºæ•°ç»„å†’æ³¡æ’åºæ‰€èŠ±æ—¶é—´ï¼š%dms\n", finish2 - start2);
 
     return 0;
 }
 
-//Ã°ÅİÅÅĞò
+//å†’æ³¡æ’åº
 void BubbleSort(ElemType A[], int n)
 {
     for (int i = 0; i < n - 1; ++i)
@@ -144,7 +144,7 @@ void BubbleSort(ElemType A[], int n)
             }
         }
 }
-//¼òµ¥Ñ¡ÔñÅÅĞò
+//ç®€å•é€‰æ‹©æ’åº
 void SelectSort(ElemType A[], int n)
 {
     for (int i = 0; i < n - 1; ++i)
@@ -161,7 +161,7 @@ void SelectSort(ElemType A[], int n)
         A[minI] = B;
     }
 }
-//Ö±½Ó²åÈëÅÅĞò
+//ç›´æ¥æ’å…¥æ’åº
 void InsertionSort(ElemType A[], int n)
 {
     for (int i = 1; i < n; ++i)
@@ -176,7 +176,7 @@ void InsertionSort(ElemType A[], int n)
         A[j + 1] = x;
     }
 }
-//¹é²¢ÅÅĞò
+//å½’å¹¶æ’åº
 void MergeSoft(ElemType A[], int low, int high, ElemType Aux[])
 {
     int m;
@@ -206,7 +206,7 @@ void Merge(ElemType A[], int low, int m, int high, ElemType Aux[])
     while (j <= high)
         Aux[k++] = A[j++];
 }
-//¿ìËÙÅÅĞò
+//å¿«é€Ÿæ’åº
 void QuickSort(ElemType A[], int low, int high)
 {
     if (low >= high)
@@ -234,11 +234,11 @@ int QuickPass(ElemType A[], int low, int high)
     A[low] = x;
     return low;
 }
-//¼ÆÊıÅÅĞò
+//è®¡æ•°æ’åº
 void CounterSort(ElemType A[], int n, int iCountA[], int maxKey, ElemType sortedA[])
 {
     for (int key = 0; key <= maxKey; ++key)
-        iCountA[key] = 0;//¸¨Öú¼ÆÊıÊı×éÇå¿Õ
+        iCountA[key] = 0;//è¾…åŠ©è®¡æ•°æ•°ç»„æ¸…ç©º
     for (int i = 0; i < n; ++i)
         ++iCountA[A[i].key];
     int iStartPos = 0;
@@ -248,7 +248,7 @@ void CounterSort(ElemType A[], int n, int iCountA[], int maxKey, ElemType sorted
         iCountA[key] = iStartPos;
         iStartPos = iNextPos;
     }
-    //assert(iStartPos == n);¶ÏÑÔ
+    //assert(iStartPos == n);æ–­è¨€
     for (int i = 0; i < n; ++i)
         sortedA[iCountA[A[i].key]++] = A[i];
 }
@@ -270,13 +270,13 @@ void BucketSort(ElemType A[], int n)
 }
 
 
-//¸´ÖÆÊı×éAµ½Êı×éB
+//å¤åˆ¶æ•°ç»„Aåˆ°æ•°ç»„B
 void Copy(ElemType A[], ElemType B[])
 {
     for (int i = 0; i < N; i++)
         B[i] = A[i];
 }
-//²úÉúN¸öËæ»úÊı
+//äº§ç”ŸNä¸ªéšæœºæ•°
 void CreateRandom(ElemType A[])
 {
     int a;
@@ -287,7 +287,7 @@ void CreateRandom(ElemType A[])
         A[i].key = a;
     }
 }
-//´òÓ¡Êı¾İ
+//æ‰“å°æ•°æ®
 void PrintData(ElemType A[])
 {
     for (int i = 0; i < N; i++)
@@ -297,7 +297,7 @@ void PrintData(ElemType A[])
             printf("\n");
     }
 }
-//ÅÅĞò½á¹û¼ì²âº¯Êı
+//æ’åºç»“æœæ£€æµ‹å‡½æ•°
 void Check(ElemType A[])
 {
     int flag = 1;
@@ -307,7 +307,7 @@ void Check(ElemType A[])
             flag = -1;
     }
     if (flag == 1)
-        printf("   ÅÅĞò½á¹ûÕıÈ·\n");
+        printf("   æ’åºç»“æœæ­£ç¡®\n");
     else
-        printf("   ÅÅĞò½á¹û´íÎó\n");
+        printf("   æ’åºç»“æœé”™è¯¯\n");
 }
