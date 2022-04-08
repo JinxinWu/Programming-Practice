@@ -4,51 +4,51 @@
 
 struct	Node
 {
-    int	digit; //Êı×Ö
-    struct Node *next, *prev; //Ç°ºó½áµãÖ¸Õë
+    int	digit; //æ•°å­—
+    struct Node *next, *prev; //å‰åç»“ç‚¹æŒ‡é’ˆ
 };
-//ÎŞ·ûºÅ´óÊı½á¹¹Ìå
+//æ— ç¬¦å·å¤§æ•°ç»“æ„ä½“
 struct UBigNumber
 {
     int flag;
-    int digitCount; //Î»Êı
-    struct Node *pHead, *pTail; //Ö¸ÏòÍ·½áµã£¬Î²½áµã
+    int digitCount; //ä½æ•°
+    struct Node *pHead, *pTail; //æŒ‡å‘å¤´ç»“ç‚¹ï¼Œå°¾ç»“ç‚¹
 };
-//ÏÂÁĞº¯Êı·µ»ØµÄ´óÊıÕ¼ÓÃµÄÄÚ´æ×ÊÔ´ÓÉº¯Êıµ÷ÓÃÕß¸ºÔğÊÍ·Å
-//ÊäÈëÎŞ·ûºÅ´óÊı
+//ä¸‹åˆ—å‡½æ•°è¿”å›çš„å¤§æ•°å ç”¨çš„å†…å­˜èµ„æºç”±å‡½æ•°è°ƒç”¨è€…è´Ÿè´£é‡Šæ”¾
+//è¾“å…¥æ— ç¬¦å·å¤§æ•°
 struct UBigNumber InputUBN ();
-//´òÓ¡ÎŞ·ûºÅ´óÊı
+//æ‰“å°æ— ç¬¦å·å¤§æ•°
 void PrintUBN (struct UBigNumber ubn);
-//Á½¸öÎŞ·ûºÅ´óÊıÏà¼Ó
+//ä¸¤ä¸ªæ— ç¬¦å·å¤§æ•°ç›¸åŠ 
 struct UBigNumber AddUBN (struct UBigNumber *pA, struct UBigNumber *pB);
-//Ïú»ÙÎŞ·ûºÅ´óÊı£¬ÊÍ·Å¿Õ¼ä
+//é”€æ¯æ— ç¬¦å·å¤§æ•°ï¼Œé‡Šæ”¾ç©ºé—´
 void DestoryUBN (struct UBigNumber *pA);
 
-//ÏÂÁĞº¯ÊıÊÇÎŞ·ûºÅ´óÊı´¦Àí¸¨Öúº¯Êı
-//½¨Á¢±íÊ¾ÎŞ·ûºÅ´óÊıÓÃ´øÍ·½áµãË«Á´±í
+//ä¸‹åˆ—å‡½æ•°æ˜¯æ— ç¬¦å·å¤§æ•°å¤„ç†è¾…åŠ©å‡½æ•°
+//å»ºç«‹è¡¨ç¤ºæ— ç¬¦å·å¤§æ•°ç”¨å¸¦å¤´ç»“ç‚¹åŒé“¾è¡¨
 void _InitUBN (struct UBigNumber *pUBN);
-//ÎŞ·ûºÅ´óÊıÎ²²¿Ìí¼ÓÒ»Î»Êı
+//æ— ç¬¦å·å¤§æ•°å°¾éƒ¨æ·»åŠ ä¸€ä½æ•°
 void _AppendDigit (struct UBigNumber *pUBN, int digit);
-//ÎŞ·ûºÅ´óÊıÇ°²¿Ìí¼ÓÒ»Î»Êı
+//æ— ç¬¦å·å¤§æ•°å‰éƒ¨æ·»åŠ ä¸€ä½æ•°
 void _AppendFrontDigit (struct UBigNumber *pUBN, int digit);
-//ÎŞ·ûºÅ´óÊı¹æ·¶±íÊ¾£¬È¥³ı¸ßÎ»¶àÓà0£¬ÖÁÉÙº¬Ò»Î»Êı×Ö
+//æ— ç¬¦å·å¤§æ•°è§„èŒƒè¡¨ç¤ºï¼Œå»é™¤é«˜ä½å¤šä½™0ï¼Œè‡³å°‘å«ä¸€ä½æ•°å­—
 void _Normalize (struct UBigNumber *pUBN);
-//¶¯Ì¬·ÖÅäÒ»¸ö½áµã£¬·µ»Ø½áµãÖ¸Õë
-//·ÖÅäÊ§°ÜÊ±£¬¼ò»¯³ÌĞò£¬ÍË³öÔËĞĞ
+//åŠ¨æ€åˆ†é…ä¸€ä¸ªç»“ç‚¹ï¼Œè¿”å›ç»“ç‚¹æŒ‡é’ˆ
+//åˆ†é…å¤±è´¥æ—¶ï¼Œç®€åŒ–ç¨‹åºï¼Œé€€å‡ºè¿è¡Œ
 struct Node *_NewNode ();
 
-//Á½¸öÎŞ·ûºÅ´óÊıÏà¼õ
+//ä¸¤ä¸ªæ— ç¬¦å·å¤§æ•°ç›¸å‡
 struct UBigNumber SubUBN (struct UBigNumber *pA, struct UBigNumber *pB);
-//Á½¸öÎŞ·ûºÅ´óÊıÏà³Ë
+//ä¸¤ä¸ªæ— ç¬¦å·å¤§æ•°ç›¸ä¹˜
 struct UBigNumber MultiplyUBN (struct UBigNumber *pA, struct UBigNumber *pB);
 
-//ÎŞ·ûºÅ´óÊı³Ë1Î»Êı
+//æ— ç¬¦å·å¤§æ•°ä¹˜1ä½æ•°
 struct UBigNumber _MultiplyDigit (struct UBigNumber *pA, int digit);
-//·µ»ØÎŞ·ûºÅ´óÊıÖĞ[start, end)Êı×Ö×ÓĞòÁĞ×é³ÉµÄÎŞ·ûºÅ´óÊı
-//³¬³ö·¶Î§²¿·ÖÊı×ÖºöÂÔ£¬ºöÂÔºó×ÓĞòÁĞ²»´æÔÚÊ±·µ»Ø0
+//è¿”å›æ— ç¬¦å·å¤§æ•°ä¸­[start, end)æ•°å­—å­åºåˆ—ç»„æˆçš„æ— ç¬¦å·å¤§æ•°
+//è¶…å‡ºèŒƒå›´éƒ¨åˆ†æ•°å­—å¿½ç•¥ï¼Œå¿½ç•¥åå­åºåˆ—ä¸å­˜åœ¨æ—¶è¿”å›0
 struct UBigNumber _FetchSub (struct UBigNumber *pA, int start, int end);
 
-void exchange(struct UBigNumber* p,struct UBigNumber* q)//½»»»º¯Êı
+void exchange(struct UBigNumber* p,struct UBigNumber* q)//äº¤æ¢å‡½æ•°
 {
     struct	Node* new=p->pHead;
     p->pHead=q->pHead;
@@ -60,7 +60,7 @@ void exchange(struct UBigNumber* p,struct UBigNumber* q)//½»»»º¯Êı
     //printf("%d\n",q->pHead->next->data);
     //free(new);
 }
-int big_small(struct UBigNumber* p,struct UBigNumber* q)//±È½Ï¾ø¶ÔÖµµÄ´óĞ¡£¬Ç°Õß´ó·µ»Ø0£¬ºóÕß´ó·µ»Ø1
+int big_small(struct UBigNumber* p,struct UBigNumber* q)//æ¯”è¾ƒç»å¯¹å€¼çš„å¤§å°ï¼Œå‰è€…å¤§è¿”å›0ï¼Œåè€…å¤§è¿”å›1
 {
     struct	Node* pnode=p->pHead->next;
     struct	Node* qnode=q->pHead->next;
@@ -93,7 +93,7 @@ void printresult(struct UBigNumber A,struct UBigNumber B)
     struct UBigNumber C,D;
     _InitUBN(&C);
     _InitUBN(&D);
-    //·ÖÀàÌÖÂÛ
+    //åˆ†ç±»è®¨è®º
 	if(A.flag==1&&B.flag==1)//A>0,B>0
     {
         if(big_small(&A,&B)==0)
@@ -184,21 +184,21 @@ void printresult(struct UBigNumber A,struct UBigNumber B)
 
 int main ()
 {   struct UBigNumber A, B, C;
-    A = InputUBN (); //ÎŞ·ûºÅ´óÊıÊäÈë
+    A = InputUBN (); //æ— ç¬¦å·å¤§æ•°è¾“å…¥
     B = InputUBN ();
-    C = MultiplyUBN (&A, &B); //ÎŞ·ûºÅ´óÊıÏà³Ë
+    C = MultiplyUBN (&A, &B); //æ— ç¬¦å·å¤§æ•°ç›¸ä¹˜
 
     printresult(A,B);
     printf ("\n");
     PrintUBN (C);
 
-    DestoryUBN (&A); //Ïú»ÙÎŞ·ûºÅ´óÊı
+    DestoryUBN (&A); //é”€æ¯æ— ç¬¦å·å¤§æ•°
     DestoryUBN (&B);
     DestoryUBN (&C);
     return 0;
 }
 
-//ÊäÈëÎŞ·ûºÅ´óÊı
+//è¾“å…¥æ— ç¬¦å·å¤§æ•°
 struct UBigNumber InputUBN ()
 {
     struct UBigNumber result;
@@ -210,10 +210,10 @@ struct UBigNumber InputUBN ()
 	    result.flag=-1;
 	else
 	    result.flag=1;
-	//printf("%d\n",result.flag);//¼ì²â
+	//printf("%d\n",result.flag);//æ£€æµ‹
 	while(ch<'0'||ch>'9')
 	    ch=getchar();
-	//printf("%c",ch);//¼ì²â
+	//printf("%c",ch);//æ£€æµ‹
 	while(ch>='0'&&ch<='9')
 	{
 		_AppendDigit(&result,ch-'0');
@@ -222,38 +222,38 @@ struct UBigNumber InputUBN ()
     _Normalize(&result);
     return result;
 }
-//´òÓ¡ÎŞ·ûºÅ´óÊı
+//æ‰“å°æ— ç¬¦å·å¤§æ•°
 void PrintUBN (struct UBigNumber ubn)
 {
     if(ubn.flag==-1)
         printf("-");
-    assert (ubn.digitCount > 0 && ubn.pHead->next != NULL); //¶ÏÑÔ £º ÖÁÉÙÓĞ1Î»Êı×Ö
-    struct Node *la = ubn.pHead->next; //Í·½áµãÎŞÊı¾İ£¬Ìø¹ı
+    assert (ubn.digitCount > 0 && ubn.pHead->next != NULL); //æ–­è¨€ ï¼š è‡³å°‘æœ‰1ä½æ•°å­—
+    struct Node *la = ubn.pHead->next; //å¤´ç»“ç‚¹æ— æ•°æ®ï¼Œè·³è¿‡
     while (la)
     {
         printf ("%d", la->digit);
         la = la->next;
     }
 }
-//Á½¸öÎŞ·ûºÅ´óÊıÏà¼Ó
+//ä¸¤ä¸ªæ— ç¬¦å·å¤§æ•°ç›¸åŠ 
 struct UBigNumber AddUBN (struct UBigNumber *pA, struct UBigNumber *pB)
 {
     struct UBigNumber result, *pResult = &result;
     _InitUBN(pResult);
-    int iCarry = 0; //½øÎ»£¬³õÊ¼0
+    int iCarry = 0; //è¿›ä½ï¼Œåˆå§‹0
     struct Node *p1, *p2;
-    p1 = pA->pTail; //´ÓµÍÎ»¿ªÊ¼´¦Àí
+    p1 = pA->pTail; //ä»ä½ä½å¼€å§‹å¤„ç†
     p2 = pB->pTail;
-    while (p1 != pA->pHead && p2 != pB->pHead)   //Á½ÊıÏàÍ¬Î»´¦Àí
+    while (p1 != pA->pHead && p2 != pB->pHead)   //ä¸¤æ•°ç›¸åŒä½å¤„ç†
     {
         int digit = p1->digit + p2->digit + iCarry;
-        iCarry = digit / 10; //ĞÂ½øÎ»
-        digit %= 10;         //µ±Ç°½á¹ûÎ»
-        _AppendFrontDigit (pResult, digit); //Ìí¼ÓÖÁ½á¹û×î¸ßÎ»
-        p1 = p1->prev; //×¼±¸´¦ÀíÇ°Ò»Î»
+        iCarry = digit / 10; //æ–°è¿›ä½
+        digit %= 10;         //å½“å‰ç»“æœä½
+        _AppendFrontDigit (pResult, digit); //æ·»åŠ è‡³ç»“æœæœ€é«˜ä½
+        p1 = p1->prev; //å‡†å¤‡å¤„ç†å‰ä¸€ä½
         p2 = p2->prev;
     }
-    while (p1 != pA->pHead)   //µÚÒ»´óÊıÊ£ÓàÎ»´¦Àí
+    while (p1 != pA->pHead)   //ç¬¬ä¸€å¤§æ•°å‰©ä½™ä½å¤„ç†
     {
         int digit = p1->digit + iCarry;
         iCarry = digit / 10;
@@ -261,7 +261,7 @@ struct UBigNumber AddUBN (struct UBigNumber *pA, struct UBigNumber *pB)
         _AppendFrontDigit (pResult, digit);
         p1 = p1->prev;
     }
-    while (p2 != pB->pHead)  //µÚ¶ş´óÊıÊ£ÓàÎ»´¦Àí
+    while (p2 != pB->pHead)  //ç¬¬äºŒå¤§æ•°å‰©ä½™ä½å¤„ç†
     {
         int digit = p2->digit + iCarry;
         iCarry = digit / 10;
@@ -269,147 +269,147 @@ struct UBigNumber AddUBN (struct UBigNumber *pA, struct UBigNumber *pB)
         _AppendFrontDigit (pResult, digit);
         p2 = p2->prev;
     }
-    if (iCarry != 0) //×îºó½øÎ»´¦Àí
+    if (iCarry != 0) //æœ€åè¿›ä½å¤„ç†
         _AppendFrontDigit (pResult, iCarry);
     return result;
 }
-//Ïú»ÙÎŞ·ûºÅ´óÊı£¬ÊÍ·Å¿Õ¼ä
+//é”€æ¯æ— ç¬¦å·å¤§æ•°ï¼Œé‡Šæ”¾ç©ºé—´
 void DestoryUBN (struct UBigNumber *pUBN)
 {
-    while (pUBN->pHead != NULL)  //Çå¿ÕºóÓ¦¸ÃÖ»Ê£Ò»¸öÍ·½áµã
+    while (pUBN->pHead != NULL)  //æ¸…ç©ºååº”è¯¥åªå‰©ä¸€ä¸ªå¤´ç»“ç‚¹
     {
-        struct Node *p =  pUBN->pHead;  //´ıÉ¾³ı½áµã
-        pUBN->pHead = p->next;          //Î²Ö¸ÕëÇ°ÒÆ
-        free (p);                       //ÊÍ·Å½áµã
+        struct Node *p =  pUBN->pHead;  //å¾…åˆ é™¤ç»“ç‚¹
+        pUBN->pHead = p->next;          //å°¾æŒ‡é’ˆå‰ç§»
+        free (p);                       //é‡Šæ”¾ç»“ç‚¹
     }
 }
-//½¨Á¢±íÊ¾ÎŞ·ûºÅ´óÊıÓÃ´øÍ·½áµãË«Á´±í
+//å»ºç«‹è¡¨ç¤ºæ— ç¬¦å·å¤§æ•°ç”¨å¸¦å¤´ç»“ç‚¹åŒé“¾è¡¨
 void _InitUBN (struct UBigNumber *pUBN)
 {
     struct Node *p = _NewNode ();
-    pUBN->pHead = pUBN->pTail = p; //½¨Í·½áµã
+    pUBN->pHead = pUBN->pTail = p; //å»ºå¤´ç»“ç‚¹
     p->next = p->prev = NULL;
-    pUBN->digitCount = 0; //Î»Êı0
+    pUBN->digitCount = 0; //ä½æ•°0
 }
-//ÎŞ·ûºÅ´óÊıÎ²²¿Ìí¼ÓÒ»Î»Êı
+//æ— ç¬¦å·å¤§æ•°å°¾éƒ¨æ·»åŠ ä¸€ä½æ•°
 void _AppendDigit (struct UBigNumber *pUBN, int digit)
 {
-    if (pUBN->digitCount == 1 && pUBN->pTail->digit == 0)//Ô­Ö»ÓĞÒ»¸ö¸ßÎ»0
+    if (pUBN->digitCount == 1 && pUBN->pTail->digit == 0)//åŸåªæœ‰ä¸€ä¸ªé«˜ä½0
     {
-        pUBN->pTail->digit = digit; //Î»Êı²»±ä£¬ÊıÖµÎª0
+        pUBN->pTail->digit = digit; //ä½æ•°ä¸å˜ï¼Œæ•°å€¼ä¸º0
         return;
     }
-    struct Node *p = _NewNode ();  //ÉêÇëĞÂ½áµã
-    p->digit = digit;              //ÉèÖÃ½áµãÊıÖµ
-    p->next = NULL;                //ĞŞ¸ÄË«Á´±í£¬Ìí¼Ó³ÉÎªĞÂÎ²²¿½áµã
+    struct Node *p = _NewNode ();  //ç”³è¯·æ–°ç»“ç‚¹
+    p->digit = digit;              //è®¾ç½®ç»“ç‚¹æ•°å€¼
+    p->next = NULL;                //ä¿®æ”¹åŒé“¾è¡¨ï¼Œæ·»åŠ æˆä¸ºæ–°å°¾éƒ¨ç»“ç‚¹
     p->prev = pUBN->pTail;
     pUBN->pTail->next = p;
     pUBN->pTail = p;
-    ++pUBN->digitCount;             //ĞŞ¸ÄÎ»Êı
+    ++pUBN->digitCount;             //ä¿®æ”¹ä½æ•°
 }
-//ÎŞ·ûºÅ´óÊıÇ°Ìí¼ÓÒ»Î»Êı
+//æ— ç¬¦å·å¤§æ•°å‰æ·»åŠ ä¸€ä½æ•°
 void _AppendFrontDigit (struct UBigNumber *pUBN, int digit)
 {
-    struct Node *p = _NewNode (); //ÉêÇëĞÂ½áµã
-    p->digit = digit;             //ÉèÖÃ½áµãÊıÖµ
-    p->next = pUBN->pHead->next;  //ĞŞ¸ÄË«Á´±í£¬Ìí¼ÓÔÚÍ·½áµãºó
+    struct Node *p = _NewNode (); //ç”³è¯·æ–°ç»“ç‚¹
+    p->digit = digit;             //è®¾ç½®ç»“ç‚¹æ•°å€¼
+    p->next = pUBN->pHead->next;  //ä¿®æ”¹åŒé“¾è¡¨ï¼Œæ·»åŠ åœ¨å¤´ç»“ç‚¹å
     if (p->next != NULL)
         p->next->prev = p;
     p->prev = pUBN->pHead;
     pUBN->pHead->next = p;
     if (pUBN->pTail == pUBN->pHead)
-        pUBN->pTail = p;          //Ô­ÏÈÖ»ÓĞÍ·½áµãÊ±£¬ĞÂ½áµãÒ²ÊÇÎ²½áµã
-    ++pUBN->digitCount;           //ĞŞ¸ÄÎ»Êı
+        pUBN->pTail = p;          //åŸå…ˆåªæœ‰å¤´ç»“ç‚¹æ—¶ï¼Œæ–°ç»“ç‚¹ä¹Ÿæ˜¯å°¾ç»“ç‚¹
+    ++pUBN->digitCount;           //ä¿®æ”¹ä½æ•°
 }
-//ÎŞ·ûºÅ´óÊı¹æ·¶±íÊ¾£¬È¥³ı¸ßÎ»¶àÓà0£¬ÖÁÉÙº¬Ò»Î»Êı×Ö
+//æ— ç¬¦å·å¤§æ•°è§„èŒƒè¡¨ç¤ºï¼Œå»é™¤é«˜ä½å¤šä½™0ï¼Œè‡³å°‘å«ä¸€ä½æ•°å­—
 void _Normalize (struct UBigNumber *pUBN)
 {
     if (pUBN->digitCount == 0)
         _AppendDigit (pUBN, 0);
-    while (pUBN->digitCount > 1 && pUBN->pHead->next->digit == 0)  //È¥³ı¸ßÎ»¶àÓàµÄ0
+    while (pUBN->digitCount > 1 && pUBN->pHead->next->digit == 0)  //å»é™¤é«˜ä½å¤šä½™çš„0
     {
         struct Node *p;
-        p = pUBN->pHead->next; //´ıÉ¾³ıµÄ½áµã
-        pUBN->pHead->next = p->next; //ÕıÏòÁ´±íÖĞÉ¾³ı
-        p->next->prev = pUBN->pHead; //·´ÏòÁ´±íÖĞÉ¾³ı
-        free (p);                       //ÊÍ·Å½áµã
-        --pUBN->digitCount;          //µ÷ÕûÎ»Êı
+        p = pUBN->pHead->next; //å¾…åˆ é™¤çš„ç»“ç‚¹
+        pUBN->pHead->next = p->next; //æ­£å‘é“¾è¡¨ä¸­åˆ é™¤
+        p->next->prev = pUBN->pHead; //åå‘é“¾è¡¨ä¸­åˆ é™¤
+        free (p);                       //é‡Šæ”¾ç»“ç‚¹
+        --pUBN->digitCount;          //è°ƒæ•´ä½æ•°
     }
 }
-//¶¯Ì¬·ÖÅäÒ»¸ö½áµã£¬·µ»Ø½áµãÖ¸Õë
-//·ÖÅäÊ§°ÜÊ±£¬¼ò»¯³ÌĞò£¬ÍË³öÔËĞĞ
+//åŠ¨æ€åˆ†é…ä¸€ä¸ªç»“ç‚¹ï¼Œè¿”å›ç»“ç‚¹æŒ‡é’ˆ
+//åˆ†é…å¤±è´¥æ—¶ï¼Œç®€åŒ–ç¨‹åºï¼Œé€€å‡ºè¿è¡Œ
 struct Node *_NewNode ()
 {
     struct Node *p;
     p = (struct Node *) malloc (sizeof (struct Node));
-    if (p == NULL)   //·ÖÅäÊ§°Ü
+    if (p == NULL)   //åˆ†é…å¤±è´¥
     {
         printf ("Error : out of memory\n");
-        exit (-1); //¼ò»¯³ÌĞò£¬ÍË³öÔËĞĞ
+        exit (-1); //ç®€åŒ–ç¨‹åºï¼Œé€€å‡ºè¿è¡Œ
     }
     return p;
 }
 
-//Á½¸öÎŞ·ûºÅ´óÊıÏà¼õ
+//ä¸¤ä¸ªæ— ç¬¦å·å¤§æ•°ç›¸å‡
 struct UBigNumber SubUBN (struct UBigNumber *pA, struct UBigNumber *pB)
 {
     struct UBigNumber result;
     _InitUBN(&result);
-    int iCarry = 0; //½èÎ»£¬³õÊ¼0
+    int iCarry = 0; //å€Ÿä½ï¼Œåˆå§‹0
     struct Node *p1, *p2;
-    p1 = pA->pTail; //´ÓµÍÎ»¿ªÊ¼´¦Àí
+    p1 = pA->pTail; //ä»ä½ä½å¼€å§‹å¤„ç†
     p2 = pB->pTail;
-    while (p1 != pA->pHead && p2 != pB->pHead)   //Á½ÊıÏàÍ¬Î»´¦Àí
+    while (p1 != pA->pHead && p2 != pB->pHead)   //ä¸¤æ•°ç›¸åŒä½å¤„ç†
     {
         int digit = p1->digit - p2->digit + iCarry;
         iCarry = 0;
         if (digit < 0)
         {
-            digit += 10;         //µ±Ç°½á¹ûÎ»
-            iCarry = -1; //ĞÂ½èÎ»
+            digit += 10;         //å½“å‰ç»“æœä½
+            iCarry = -1; //æ–°å€Ÿä½
         }
-        _AppendFrontDigit (&result, digit); //Ìí¼ÓÖÁ½á¹û×î¸ßÎ»
-        p1 = p1->prev; //×¼±¸´¦ÀíÇ°Ò»Î»
+        _AppendFrontDigit (&result, digit); //æ·»åŠ è‡³ç»“æœæœ€é«˜ä½
+        p1 = p1->prev; //å‡†å¤‡å¤„ç†å‰ä¸€ä½
         p2 = p2->prev;
     }
     assert (p2 == pB->pHead);
-    while (p1 != pA->pHead)   //µÚÒ»´óÊıÊ£ÓàÎ»´¦Àí
+    while (p1 != pA->pHead)   //ç¬¬ä¸€å¤§æ•°å‰©ä½™ä½å¤„ç†
     {
         int digit = p1->digit + iCarry;
         iCarry = 0;
         if (digit < 0)
         {
-            digit += 10;         //µ±Ç°½á¹ûÎ»
-            iCarry = -1; //ĞÂ½èÎ»
+            digit += 10;         //å½“å‰ç»“æœä½
+            iCarry = -1; //æ–°å€Ÿä½
         }
-        _AppendFrontDigit (&result, digit); //Ìí¼ÓÖÁ½á¹û×î¸ßÎ»
-        p1 = p1->prev; //×¼±¸´¦ÀíÇ°Ò»Î»
+        _AppendFrontDigit (&result, digit); //æ·»åŠ è‡³ç»“æœæœ€é«˜ä½
+        p1 = p1->prev; //å‡†å¤‡å¤„ç†å‰ä¸€ä½
     }
     assert (iCarry == 0);
     _Normalize(&result);
     return result;
 }
-//Á½¸öÎŞ·ûºÅ´óÊıÏà³Ë
+//ä¸¤ä¸ªæ— ç¬¦å·å¤§æ•°ç›¸ä¹˜
 struct UBigNumber MultiplyUBN (struct UBigNumber *pA, struct UBigNumber *pB)
 {
-    //µİ¹éÖÕÖ¹Ìõ¼ş
+    //é€’å½’ç»ˆæ­¢æ¡ä»¶
     if (pB->digitCount == 1)
         return _MultiplyDigit (pA, pB->pTail->digit);
     else if (pA->digitCount == 1)
         return _MultiplyDigit (pB, pA->pTail->digit);
-    // ¼ÆËã²ğ·Ö³¤¶È
+    // è®¡ç®—æ‹†åˆ†é•¿åº¦
     int m = pA->digitCount;
     int n = pB->digitCount;
 
     int h = (m> n?m:n) / 2;
-    /* ²ğ·ÖÎªa, b, c, d */
+    /* æ‹†åˆ†ä¸ºa, b, c, d */
     struct UBigNumber a, b, c, d;
 
-    a = _FetchSub (pA, 0, m - h); //¸ßm-hÎ»
-    b = _FetchSub (pA, m - h, m); //µÍhÎ»
-    c = _FetchSub (pB, 0, n - h);  //¸ßm-hÎ»
-    d = _FetchSub (pB, n - h, n);  //µÍhÎ»
-    // ¼ÆËãz2, z0, z1, ´Ë´¦µÄ³Ë·¨Ê¹ÓÃµİ¹é
+    a = _FetchSub (pA, 0, m - h); //é«˜m-hä½
+    b = _FetchSub (pA, m - h, m); //ä½hä½
+    c = _FetchSub (pB, 0, n - h);  //é«˜m-hä½
+    d = _FetchSub (pB, n - h, n);  //ä½hä½
+    // è®¡ç®—z2, z0, z1, æ­¤å¤„çš„ä¹˜æ³•ä½¿ç”¨é€’å½’
     struct UBigNumber z0, z1, z2;
 
     z2 = MultiplyUBN (&a, &c); //z2 = a * c;
@@ -417,7 +417,7 @@ struct UBigNumber MultiplyUBN (struct UBigNumber *pA, struct UBigNumber *pB)
     struct UBigNumber  t1, t2, t3,t4,t5, result;
     t1 = AddUBN(&a, &b);    //t1 = a+b
     t2 = AddUBN(&c, &d);     //t2 = c+d
-    //Ïú»Ù¸÷²»ÔÙÊ¹ÓÃµÄÎŞ·ûºÅ´óÊı
+    //é”€æ¯å„ä¸å†ä½¿ç”¨çš„æ— ç¬¦å·å¤§æ•°
     DestoryUBN (&a);
     DestoryUBN (&b);
     DestoryUBN (&c);
@@ -433,7 +433,7 @@ struct UBigNumber MultiplyUBN (struct UBigNumber *pA, struct UBigNumber *pB)
         _AppendDigit (&z1, 0);
     t5 = AddUBN(&z2, &z1); //t5= z2*10^2h + z1 * 10^h
     result = AddUBN(&t5, &z0); //result = z2*10^2h + z1 * 10^h +z0
-    //Á½ÊıÏà³Ë·ûºÅÎÊÌâ
+    //ä¸¤æ•°ç›¸ä¹˜ç¬¦å·é—®é¢˜
     if((pA->flag==-1&&pB->flag!=-1)||(pA->flag!=-1&&pB->flag==-1))
         result.flag=-1;
 
@@ -448,7 +448,7 @@ struct UBigNumber MultiplyUBN (struct UBigNumber *pA, struct UBigNumber *pB)
     return result;
 }
 
-//ÎŞ·ûºÅ´óÊı³Ë1Î»Êı
+//æ— ç¬¦å·å¤§æ•°ä¹˜1ä½æ•°
 struct UBigNumber _MultiplyDigit (struct UBigNumber *pA, int digit2)
 {
     struct UBigNumber result;
@@ -459,10 +459,10 @@ struct UBigNumber _MultiplyDigit (struct UBigNumber *pA, int digit2)
         return result;
     }
 
-    int iCarry = 0; //½øÎ»£¬³õÊ¼0
+    int iCarry = 0; //è¿›ä½ï¼Œåˆå§‹0
     struct Node *p1;
-    p1 = pA->pTail; //´ÓµÍÎ»¿ªÊ¼´¦Àí
-    while (p1 != pA->pHead)   //µÚÒ»´óÊıÊ£ÓàÎ»´¦Àí
+    p1 = pA->pTail; //ä»ä½ä½å¼€å§‹å¤„ç†
+    while (p1 != pA->pHead)   //ç¬¬ä¸€å¤§æ•°å‰©ä½™ä½å¤„ç†
     {
         int digit = p1->digit * digit2 + iCarry;
         iCarry = digit / 10;
@@ -470,13 +470,13 @@ struct UBigNumber _MultiplyDigit (struct UBigNumber *pA, int digit2)
         _AppendFrontDigit (&result, digit);
         p1 = p1->prev;
     }
-    if (iCarry != 0) //×îºó½øÎ»´¦Àí
+    if (iCarry != 0) //æœ€åè¿›ä½å¤„ç†
         _AppendFrontDigit (&result, iCarry);
     return result;
 }
 
-//·µ»ØÎŞ·ûºÅ´óÊıÖĞ[start, end)Êı×Ö×ÓĞòÁĞ×é³ÉµÄÎŞ·ûºÅ´óÊı
-//³¬³ö·¶Î§²¿·ÖÊı×ÖºöÂÔ£¬ºöÂÔºó×ÓĞòÁĞ²»´æÔÚÊ±·µ»Ø0
+//è¿”å›æ— ç¬¦å·å¤§æ•°ä¸­[start, end)æ•°å­—å­åºåˆ—ç»„æˆçš„æ— ç¬¦å·å¤§æ•°
+//è¶…å‡ºèŒƒå›´éƒ¨åˆ†æ•°å­—å¿½ç•¥ï¼Œå¿½ç•¥åå­åºåˆ—ä¸å­˜åœ¨æ—¶è¿”å›0
 struct UBigNumber _FetchSub (struct UBigNumber *pA, int start, int end)
 {
     struct UBigNumber result;
@@ -490,7 +490,7 @@ struct UBigNumber _FetchSub (struct UBigNumber *pA, int start, int end)
     }
     while (i < end && p != NULL)
     {
-        _AppendDigit (&result, p->digit); //Ìí¼ÓÔÚÎ²²¿
+        _AppendDigit (&result, p->digit); //æ·»åŠ åœ¨å°¾éƒ¨
         p = p->next;
         ++i;
     }
