@@ -77,7 +77,6 @@ void MakeRand(Iris iris[], int n)
 
 /**
  * @brief 打开数据文件并预处理数据
- * @param path 数据文件的路径
  */
 int InputAndInitialize()
 {
@@ -172,7 +171,7 @@ double EuclideanDistance(Iris i1, Iris i2)
  * @param a
  * @param b
  * @param c
- * @return char 返回出现的频数最多的标签
+ * @return int 返回出现的频数最多的标签
  */
 int CompareLabel(int a, int b, int c)
 {
